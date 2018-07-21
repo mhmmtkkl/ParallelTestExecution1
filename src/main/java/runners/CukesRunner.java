@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		 
 		dryRun=false,
-		features= {"src/test/resources/features/"},
+		features= "src/test/resources/features/",
 		glue = "stepDefs"
 	 
 		)
