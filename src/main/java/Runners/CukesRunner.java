@@ -8,8 +8,9 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+		 
 		dryRun=false,
-		features="src/test/resources/reviewSessionCode/",
+		features= {"src/test/resources/reviewSessionCode/"},
 		glue = "stepDefs"
 	 
 		)
