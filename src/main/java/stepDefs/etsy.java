@@ -11,11 +11,14 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import page.etsyPage;
  
 
 public class etsy {
 	
-	private WebDriver driver;
+	private WebDriver etsyPage;
+	etsyPage ep ;
+	
 	
 	@Given("User in home page")
 	public void user_in_home_page() {
@@ -29,8 +32,8 @@ public class etsy {
 
 	@When("User searches for {string}")
 	public void user_searches_for(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		ep = new etsyPage(etsyPage);
+		
 	}
 
 	@Then("Search result should be displayed")
