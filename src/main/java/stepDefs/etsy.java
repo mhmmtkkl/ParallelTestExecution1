@@ -39,7 +39,7 @@ public class etsy {
 			   driver.getTitle());
 	}
 	 
-	@When("User searches for string")
+	@When("User searches for {string}")
 	public void user_searches_for(String keyword) {
 		this.keyword=keyword;
 		etsy = new 	etsyPage(driver);
