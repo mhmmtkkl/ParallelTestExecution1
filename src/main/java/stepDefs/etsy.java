@@ -40,7 +40,7 @@ public class etsy {
 	 	 	
 			caps.setCapability("name", "mhmmt");
 			caps.setCapability("access-key", ACCESS_KEY);
-			caps.setCapability("platform", "Linux");
+			caps.setCapability("platform", "Windows 10");
 			caps.setCapability("browserName", "Chrome" );
 			caps.setCapability("version", "latest");
 			caps.setCapability("passed", "true");
