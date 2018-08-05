@@ -2,18 +2,23 @@ package runner;
 
 import org.junit.runner.RunWith;
 
+ 
+ 
 import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-@RunWith(Cucumber.class)
 @CucumberOptions(
-		dryRun=false,
-		features= "src/test/resources/features/",
-		glue = "stepDefs"
-		
-		)
-public class CukesRunner {
-			
+		plugin = {"pretty", 
+				"html:target/cucumbe r-report",
+				"json:target/cucumber.json"
+		},
+		 	 tags="api",
+				features = "src/test/resources/features/api/*/", 
+				glue = "stepDefs",
+				dryRun=false 
+)
+public class CukesRunner extends AbstractTestNGCucumberTests {
+	 
 }
 
 

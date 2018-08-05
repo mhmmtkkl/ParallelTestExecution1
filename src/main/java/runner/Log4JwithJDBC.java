@@ -19,15 +19,15 @@ public static final Logger logger = LogManager.getLogger();
 		logger.info("establishing database");
  
 		
-		try(Connection connection = DriverManager.getConnection(ConfigurationReader.getProperty("oracledb.url"), "hr", "hr");
-			Statement statement = connection.createStatement();
-			ResultSet resultSet  = statement.executeQuery("Select * from employees");
-				)
-		{
-			logger.debug("Executing query: Select * from employees agains");
-			logger.info(ConfigurationReader.getProperty("oracledb.url"), "User: hr", "Password: hr");
-			resultSet.last();
-}
+//		try(Connection connection = DriverManager.getConnection(ConfigurationReader.getProperty("oracledb.url"), "hr", "hr");
+//			Statement statement = connection.createStatement();
+//			ResultSet resultSet  = statement.executeQuery("Select * from employees");
+//				)
+//		{
+//			logger.debug("Executing query: Select * from employees agains");
+//			logger.info(ConfigurationReader.getProperty("oracledb.url"), "User: hr", "Password: hr");
+//			resultSet.last();
+//}
 	}
 }
 	 

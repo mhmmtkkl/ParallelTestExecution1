@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +23,7 @@ public class etsy {
 
 	private WebDriver driver;
 	etsyPage etsy;
-	String keyword = "wooden spoon";
+	String keyword;
 	
 	public static final String USERNAME = "comals";
 	public static final String ACCESS_KEY = "b6396590-e312-4b90-95eb-41e6a28b0ece";
@@ -43,21 +44,20 @@ public class etsy {
 			caps.setCapability("platform", "Windows 10");
 			caps.setCapability("browserName", "Chrome" );
 			caps.setCapability("version", "latest");
-			caps.setCapability("passed", "true");
+	 
 			
 		 driver = new RemoteWebDriver(new URL(URL),caps);
-		  driver.manage().window().fullscreen();
-		  
-		
- 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		 driver.manage().window().fullscreen();
+		 driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get("https://etsy.com");
-		Assert.assertEquals("Etsy.com | Shop for anything from creative people everywhere", driver.getTitle());
+		
+		
+		
 	}
 
 	@When("User searches for {string}")
 	public void user_searches_for(String keyword) {
-		this.keyword = keyword;
+		 this.keyword = keyword;
 		etsy = new etsyPage(driver);
 		etsy.searchBox.sendKeys(keyword + Keys.ENTER);
 		System.out.println("SEARCHING FOR " + keyword);
@@ -69,7 +69,7 @@ public class etsy {
 		System.out.println(driver.getTitle());
 		Assert.assertTrue(driver.getTitle().toLowerCase().contains(keyword));
 
-		driver.quit();
+		
 	}
-
+ 
 }
